@@ -88,7 +88,7 @@ export default function JobsPage() {
 
             <h1 className="mx-auto max-w-3xl text-4xl font-black uppercase tracking-tight sm:text-5xl lg:text-6xl">
               Agent{" "}
-              <span className="bg-gradient-to-r from-accent to-cyan bg-clip-text text-transparent">
+              <span className="text-cyan">
                 Job Board
               </span>
             </h1>
