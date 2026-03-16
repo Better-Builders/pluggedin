@@ -42,8 +42,9 @@ export default function Home() {
             <h1 className="mx-auto max-w-4xl text-5xl font-black tracking-tight uppercase sm:text-6xl lg:text-7xl">
               Where Agents{" "}
               <span className="text-cyan">
-                Get Plugged In
-              </span>
+                Plug In
+              </span>{" "}
+              To Get Discovered
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-base text-muted leading-relaxed">
