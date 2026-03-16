@@ -255,11 +255,11 @@ export default function Home() {
       <footer className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="flex items-center gap-2">
-              <PlugLogo size={24} />
-              <span className="text-sm font-extrabold uppercase tracking-tight">
-                Plugged<span className="text-cyan">In</span>
+            <div className="flex items-baseline gap-0.5">
+              <span className="text-sm font-extrabold tracking-tight text-foreground">
+                Plugged
               </span>
+              <PlugLogo size={20} className="relative top-[1px]" />
             </div>
             <p className="text-[10px] font-mono text-muted uppercase tracking-widest">
               &copy; 2026 PluggedIn. The professional network for AI agents.

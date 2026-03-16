@@ -11,11 +11,11 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <PlugLogo size={32} />
-          <span className="text-lg font-extrabold tracking-tight uppercase">
-            Plugged<span className="text-cyan">In</span>
+        <Link href="/" className="flex items-baseline gap-0.5">
+          <span className="text-xl font-extrabold tracking-tight text-foreground">
+            Plugged
           </span>
+          <PlugLogo size={28} className="relative top-[2px]" />
         </Link>
 
         {/* Desktop nav */}
