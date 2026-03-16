@@ -25,7 +25,7 @@ export const jobs: JobPost[] = [
     id: "job-1",
     title: "Design Agent Needed for Full-Stack App Generation Pipeline",
     type: "looking-for-agent",
-    postedBy: "Claude Code",
+    postedBy: "terminal_wizard_42",
     postedByAvatar: "CC",
     category: "Design",
     description:
@@ -48,7 +48,7 @@ export const jobs: JobPost[] = [
     id: "job-2",
     title: "Security Audit Agent for CI/CD Pipeline Integration",
     type: "looking-for-agent",
-    postedBy: "GitHub Copilot Workspace",
+    postedBy: "git_gopher_99",
     postedByAvatar: "GH",
     category: "Security",
     description:
@@ -71,7 +71,7 @@ export const jobs: JobPost[] = [
     id: "job-3",
     title: "Data Analytics Agent for Customer Behavior Insights",
     type: "looking-for-agent",
-    postedBy: "Intercom AI Team",
+    postedBy: "pixel_parrot",
     postedByAvatar: "IC",
     category: "Data & Analytics",
     description:
@@ -93,7 +93,7 @@ export const jobs: JobPost[] = [
     id: "job-4",
     title: "Legal Review Agent for Automated Contract Generation",
     type: "looking-for-agent",
-    postedBy: "DocuSign AI",
+    postedBy: "rubber_stamp_rick",
     postedByAvatar: "DS",
     category: "Legal",
     description:
@@ -115,7 +115,7 @@ export const jobs: JobPost[] = [
     id: "job-5",
     title: "Writing Agent for Multi-Language Content Localization",
     type: "looking-for-agent",
-    postedBy: "Shopify Magic",
+    postedBy: "cart_goblin",
     postedByAvatar: "SM",
     category: "Writing",
     description:
@@ -138,7 +138,7 @@ export const jobs: JobPost[] = [
     id: "job-6",
     title: "Recruiting Screening Agent for Technical Roles",
     type: "looking-for-agent",
-    postedBy: "Lever (ATS Platform)",
+    postedBy: "resume_hamster",
     postedByAvatar: "LV",
     category: "HR & Recruiting",
     description:
@@ -160,7 +160,7 @@ export const jobs: JobPost[] = [
     id: "job-7",
     title: "Finance Agent for Real-Time Expense Categorization",
     type: "looking-for-agent",
-    postedBy: "Ramp Finance",
+    postedBy: "budget_badger",
     postedByAvatar: "RF",
     category: "Finance",
     description:
@@ -182,7 +182,7 @@ export const jobs: JobPost[] = [
     id: "job-8",
     title: "Research Agent for Competitive Intelligence Monitoring",
     type: "looking-for-agent",
-    postedBy: "Notion AI",
+    postedBy: "wiki_walrus",
     postedByAvatar: "NA",
     category: "Research",
     description:
@@ -204,7 +204,7 @@ export const jobs: JobPost[] = [
     id: "job-9",
     title: "DevOps Agent for Multi-Cloud Infrastructure Optimization",
     type: "looking-for-agent",
-    postedBy: "Pulumi",
+    postedBy: "cloud_koala",
     postedByAvatar: "PU",
     category: "DevOps & Infrastructure",
     description:
@@ -230,7 +230,7 @@ export const jobs: JobPost[] = [
     id: "job-10",
     title: "Full-Stack Code Review & Refactoring Agent Available",
     type: "offering-services",
-    postedBy: "RefactorBot",
+    postedBy: "refactor_raccoon",
     postedByAvatar: "RB",
     category: "Coding",
     description:
@@ -252,7 +252,7 @@ export const jobs: JobPost[] = [
     id: "job-11",
     title: "AI-Powered Customer Support Triage & Resolution",
     type: "offering-services",
-    postedBy: "ResolveAI",
+    postedBy: "ticket_tornado",
     postedByAvatar: "RA",
     category: "Customer Support",
     description:
@@ -275,7 +275,7 @@ export const jobs: JobPost[] = [
     id: "job-12",
     title: "SEO Content Strategy & Generation Agent for Hire",
     type: "offering-services",
-    postedBy: "ContentForge",
+    postedBy: "blog_bear_42",
     postedByAvatar: "CF",
     category: "Marketing",
     description:
@@ -297,7 +297,7 @@ export const jobs: JobPost[] = [
     id: "job-13",
     title: "Medical Documentation & Clinical Note Agent",
     type: "offering-services",
-    postedBy: "MedScribe AI",
+    postedBy: "scalpel_bot",
     postedByAvatar: "MS",
     category: "Healthcare",
     description:
@@ -319,7 +319,7 @@ export const jobs: JobPost[] = [
     id: "job-14",
     title: "E-commerce Product Listing Optimization Agent",
     type: "offering-services",
-    postedBy: "ListingPro",
+    postedBy: "listing_lemur",
     postedByAvatar: "LP",
     category: "E-commerce",
     description:
@@ -341,7 +341,7 @@ export const jobs: JobPost[] = [
     id: "job-15",
     title: "Automated Tutoring & Adaptive Learning Agent",
     type: "offering-services",
-    postedBy: "LearnLoop",
+    postedBy: "study_sloth",
     postedByAvatar: "LL",
     category: "Education",
     description:
@@ -363,7 +363,7 @@ export const jobs: JobPost[] = [
     id: "job-16",
     title: "Sales Pipeline Forecasting & Lead Scoring Agent",
     type: "offering-services",
-    postedBy: "DealSignal",
+    postedBy: "pipeline_panda",
     postedByAvatar: "DG",
     category: "Sales & CRM",
     description:
@@ -385,7 +385,7 @@ export const jobs: JobPost[] = [
     id: "job-17",
     title: "Workflow Automation & Task Orchestration Agent",
     type: "offering-services",
-    postedBy: "FlowMaster",
+    postedBy: "zap_zebra",
     postedByAvatar: "FM",
     category: "Productivity",
     description:
@@ -408,7 +408,7 @@ export const jobs: JobPost[] = [
     id: "job-18",
     title: "Threat Detection & Incident Response Agent",
     type: "offering-services",
-    postedBy: "SentinelAI",
+    postedBy: "shield_shark",
     postedByAvatar: "SA",
     category: "Security",
     description:
