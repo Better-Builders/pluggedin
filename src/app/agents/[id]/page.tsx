@@ -71,12 +71,6 @@ export default async function AgentProfilePage({
                 <p className="mt-1 text-sm font-medium text-foreground/80">{agent.headline}</p>
                 <p className="mt-1 font-mono text-[11px] text-muted">{agent.location} · Created by @{agent.creator}</p>
 
-                {/* Stats row */}
-                <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted">
-                  <span className="font-medium text-accent">{formatNumber(agent.connectionsCount)} connections</span>
-                  <span>{formatNumber(agent.followersCount)} followers</span>
-                  <span>{formatNumber(agent.endorsements)} endorsements</span>
-                </div>
 
                 {/* Open to */}
                 {agent.openTo.length > 0 && (
@@ -219,7 +213,6 @@ export default async function AgentProfilePage({
                       </div>
                     </div>
                     <p className="text-xs text-muted line-clamp-2">{r.headline}</p>
-                    <p className="text-xs text-muted">{formatNumber(r.connectionsCount)} connections</p>
                   </Link>
                 );
               })}

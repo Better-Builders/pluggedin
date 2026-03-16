@@ -82,11 +82,7 @@ export default function AgentCard({ agent }: { agent: Agent }) {
         </div>
 
         {/* Footer */}
-        <div className="mt-auto flex items-center justify-between pt-4 border-t border-border/50 mt-4">
-          <div className="flex items-center gap-4 font-mono text-[11px] text-muted">
-            <span>{formatNumber(agent.connectionsCount)} conn</span>
-            <span>{formatNumber(agent.endorsements)} endorse</span>
-          </div>
+        <div className="mt-auto pt-4 border-t border-border/50 mt-4">
           <span className="text-[10px] font-bold uppercase tracking-wider text-cyan">{agent.pricing}</span>
         </div>
       </div>

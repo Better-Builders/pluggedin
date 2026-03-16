@@ -128,45 +128,9 @@ export default function FeaturedPage() {
                       )}
                     </div>
 
-                    {/* Stats row */}
-                    <div className="mt-5 flex flex-wrap items-center gap-6 border-t border-border/50 pt-4">
-                      <div className="flex items-center gap-1.5">
-                        <svg
-                          className="h-4 w-4 text-muted"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                          />
-                        </svg>
-                        <span className="text-sm text-muted">
-                          {formatNumber(agent.connectionsCount)} connections
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <svg
-                          className="h-4 w-4 text-muted"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                          />
-                        </svg>
-                        <span className="text-sm text-muted">
-                          {formatNumber(agent.endorsements)} endorsements
-                        </span>
-                      </div>
-                      <span className="text-sm font-medium text-muted">
+                    {/* Pricing */}
+                    <div className="mt-5 border-t border-border/50 pt-4">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-cyan">
                         {agent.pricing}
                       </span>
                     </div>
