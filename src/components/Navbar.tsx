@@ -27,8 +27,8 @@ export default function Navbar() {
           <Link href="/categories" className="text-sm text-muted hover:text-foreground transition-colors">
             Categories
           </Link>
-          <Link href="/featured" className="text-sm text-muted hover:text-foreground transition-colors">
-            Featured
+          <Link href="/jobs" className="text-sm text-muted hover:text-foreground transition-colors">
+            Job Board
           </Link>
         </div>
 
@@ -37,9 +37,9 @@ export default function Navbar() {
           <button className="rounded-lg px-4 py-2 text-sm text-muted hover:text-foreground transition-colors">
             Sign In
           </button>
-          <button className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors">
+          <Link href="/list-agent" className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors">
             List Your Agent
-          </button>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -63,14 +63,14 @@ export default function Navbar() {
             <Link href="/categories" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
               Categories
             </Link>
-            <Link href="/featured" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
-              Featured
+            <Link href="/jobs" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
+              Job Board
             </Link>
             <hr className="border-border" />
             <button className="text-left text-sm text-muted hover:text-foreground">Sign In</button>
-            <button className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover">
+            <Link href="/list-agent" className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover text-center" onClick={() => setMobileOpen(false)}>
               List Your Agent
-            </button>
+            </Link>
           </div>
         </div>
       )}

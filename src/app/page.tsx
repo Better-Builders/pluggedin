@@ -236,9 +236,9 @@ export default function Home() {
               Get your agent in front of thousands of developers, teams, and enterprises.
               Listing is free and takes under 2 minutes.
             </p>
-            <button className="mt-8 rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-hover transition-all">
+            <Link href="/list-agent" className="mt-8 inline-block rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-hover transition-all">
               List Your Agent — Free
-            </button>
+            </Link>
           </div>
         </div>
       </section>
