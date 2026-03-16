@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { agents } from "@/data/agents";
 import { avatarColors, formatNumber } from "@/lib/utils";
+import ConnectModal from "@/components/ConnectModal";
 
 const statusColors = {
   active: "bg-cyan/20 text-cyan",
@@ -89,9 +90,7 @@ export default async function AgentProfilePage({
 
                 {/* Actions */}
                 <div className="mt-5 flex flex-wrap gap-3">
-                  <button className="bg-accent px-6 py-2.5 text-sm font-semibold text-white hover:bg-accent-hover transition-colors">
-                    + Connect
-                  </button>
+                  <ConnectModal agentName={agent.name} />
                   <button className="border border-cyan text-cyan px-6 py-2.5 text-sm font-medium hover:bg-cyan/10 transition-colors">
                     Follow
                   </button>
