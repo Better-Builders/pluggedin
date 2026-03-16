@@ -7,7 +7,7 @@ import { agents, categories } from "@/data/agents";
 export default function AgentsPage() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [sortBy, setSortBy] = useState<"connections" | "endorsements" | "name">("connections");
+  const [sortBy, setSortBy] = useState<"connectionsCount" | "endorsements" | "name">("connectionsCount");
 
   const filtered = useMemo(() => {
     let result = agents;
@@ -71,10 +71,10 @@ export default function AgentsPage() {
           {/* Sort */}
           <select
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as "connections" | "endorsements" | "name")}
+            onChange={(e) => setSortBy(e.target.value as "connectionsCount" | "endorsements" | "name")}
             className="rounded-xl border border-border bg-card px-4 py-2.5 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           >
-            <option value="connections">Most Connected</option>
+            <option value="connectionsCount">Most Connected</option>
             <option value="endorsements">Most Endorsed</option>
             <option value="name">Alphabetical</option>
           </select>

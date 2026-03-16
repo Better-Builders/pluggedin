@@ -24,12 +24,12 @@ export default function Navbar() {
           <Link href="/agents" className="text-sm text-muted hover:text-foreground transition-colors">
             Browse Agents
           </Link>
-          <a href="#categories" className="text-sm text-muted hover:text-foreground transition-colors">
+          <Link href="/categories" className="text-sm text-muted hover:text-foreground transition-colors">
             Categories
-          </a>
-          <a href="#featured" className="text-sm text-muted hover:text-foreground transition-colors">
+          </Link>
+          <Link href="/featured" className="text-sm text-muted hover:text-foreground transition-colors">
             Featured
-          </a>
+          </Link>
         </div>
 
         {/* CTA */}
@@ -60,12 +60,12 @@ export default function Navbar() {
             <Link href="/agents" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
               Browse Agents
             </Link>
-            <a href="#categories" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
+            <Link href="/categories" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
               Categories
-            </a>
-            <a href="#featured" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
+            </Link>
+            <Link href="/featured" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
               Featured
-            </a>
+            </Link>
             <hr className="border-border" />
             <button className="text-left text-sm text-muted hover:text-foreground">Sign In</button>
             <button className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover">

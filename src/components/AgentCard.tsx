@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Agent } from "@/data/agents";
+import { avatarColors, formatNumber } from "@/lib/utils";
 
 const statusColors = {
   active: "bg-success/20 text-success",
@@ -14,25 +15,6 @@ const statusLabels = {
   beta: "Beta",
   "coming-soon": "Coming Soon",
 };
-
-const avatarColors: Record<string, string> = {
-  Coding: "from-indigo-500 to-purple-600",
-  Research: "from-cyan-500 to-blue-600",
-  Writing: "from-emerald-500 to-teal-600",
-  Design: "from-pink-500 to-rose-600",
-  Data: "from-orange-500 to-amber-600",
-  "Customer Support": "from-green-500 to-emerald-600",
-  Sales: "from-violet-500 to-purple-600",
-  DevOps: "from-red-500 to-orange-600",
-  Legal: "from-slate-400 to-zinc-600",
-  Finance: "from-yellow-500 to-orange-600",
-  Marketing: "from-fuchsia-500 to-pink-600",
-};
-
-function formatNumber(n: number): string {
-  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, "")}k`;
-  return n.toString();
-}
 
 export default function AgentCard({ agent }: { agent: Agent }) {
   const gradient = avatarColors[agent.category] || "from-indigo-500 to-purple-600";
@@ -65,24 +47,36 @@ export default function AgentCard({ agent }: { agent: Agent }) {
           </div>
         </div>
 
+        {/* Headline */}
+        <p className="mt-2 text-xs font-medium text-foreground/70 line-clamp-1">
+          {agent.headline}
+        </p>
+
         {/* Tagline */}
-        <p className="mt-3 text-sm text-muted leading-relaxed line-clamp-2">
+        <p className="mt-1.5 text-sm text-muted leading-relaxed line-clamp-2">
           {agent.tagline}
         </p>
 
-        {/* Capabilities */}
+        {/* Location & Category */}
+        <div className="mt-2 flex items-center gap-2 text-[11px] text-muted">
+          <span>{agent.location}</span>
+          <span>·</span>
+          <span className="text-accent">{agent.category}</span>
+        </div>
+
+        {/* Skills */}
         <div className="mt-3 flex flex-wrap gap-1.5">
-          {agent.capabilities.slice(0, 3).map((cap) => (
+          {agent.skills.slice(0, 3).map((skill) => (
             <span
-              key={cap}
+              key={skill}
               className="rounded-md bg-accent/10 px-2 py-0.5 text-[11px] text-accent font-medium"
             >
-              {cap}
+              {skill}
             </span>
           ))}
-          {agent.capabilities.length > 3 && (
+          {agent.skills.length > 3 && (
             <span className="rounded-md bg-border/50 px-2 py-0.5 text-[11px] text-muted">
-              +{agent.capabilities.length - 3}
+              +{agent.skills.length - 3}
             </span>
           )}
         </div>
@@ -94,7 +88,7 @@ export default function AgentCard({ agent }: { agent: Agent }) {
               <svg className="h-3.5 w-3.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
               </svg>
-              <span className="text-xs text-muted">{formatNumber(agent.connections)}</span>
+              <span className="text-xs text-muted">{formatNumber(agent.connectionsCount)}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <svg className="h-3.5 w-3.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -1,0 +1,241 @@
+import Link from "next/link";
+import AgentCard from "@/components/AgentCard";
+import { agents } from "@/data/agents";
+
+import { avatarColors, formatNumber } from "@/lib/utils";
+
+const statusColors: Record<string, string> = {
+  active: "bg-success/20 text-success",
+  beta: "bg-yellow-500/20 text-yellow-400",
+  "coming-soon": "bg-muted/20 text-muted",
+};
+
+const statusLabels: Record<string, string> = {
+  active: "Active",
+  beta: "Beta",
+  "coming-soon": "Coming Soon",
+};
+
+export default function FeaturedPage() {
+  const featured = agents.filter((a) => a.featured);
+  const spotlight = featured.slice(0, 3);
+  const remaining = featured.slice(3);
+
+  return (
+    <main className="min-h-screen pt-16">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-accent/5 blur-[120px]" />
+          <div className="absolute right-0 top-20 h-[250px] w-[350px] rounded-full bg-purple-500/5 blur-[100px]" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+          <div className="text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm text-accent">
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              Curated by the PluggedIn Team
+            </div>
+
+            <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              Featured{" "}
+              <span className="bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">
+                Agents
+              </span>
+            </h1>
+
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted leading-relaxed">
+              Hand-picked agents that represent the best of the AI ecosystem.
+              Vetted for quality, reliability, and innovation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Spotlight: Top 3 */}
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
+        <div className="mb-8">
+          <h2 className="text-xl font-bold sm:text-2xl">In the Spotlight</h2>
+          <p className="mt-1 text-sm text-muted">
+            The agents everyone is talking about
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          {spotlight.map((agent) => {
+            const gradient =
+              avatarColors[agent.category] || "from-indigo-500 to-purple-600";
+
+            return (
+              <Link key={agent.id} href={`/agents/${agent.id}`}>
+                <div className="group relative flex flex-col gap-6 rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:border-accent/40 hover:bg-card-hover hover:shadow-lg hover:shadow-accent-glow sm:flex-row sm:items-start sm:p-8">
+                  {/* Accent bar */}
+                  <div
+                    className={`absolute left-0 top-6 hidden h-16 w-1 rounded-r-full bg-gradient-to-b ${gradient} sm:block`}
+                  />
+
+                  {/* Avatar */}
+                  <div
+                    className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white font-bold text-2xl shadow-lg`}
+                  >
+                    {agent.avatar}
+                  </div>
+
+                  {/* Content */}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-accent-hover transition-colors">
+                        {agent.name}
+                      </h3>
+                      <span
+                        className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-medium ${statusColors[agent.status]}`}
+                      >
+                        {statusLabels[agent.status]}
+                      </span>
+                      <span className="rounded-full bg-accent/15 px-2.5 py-0.5 text-[11px] font-medium text-accent">
+                        {agent.category}
+                      </span>
+                    </div>
+
+                    <p className="mt-1 text-sm text-muted">
+                      by {agent.creator}
+                    </p>
+
+                    <p className="mt-1 text-sm font-medium text-foreground/80">
+                      {agent.tagline}
+                    </p>
+
+                    <p className="mt-3 text-sm text-muted leading-relaxed line-clamp-3">
+                      {agent.description}
+                    </p>
+
+                    {/* Capabilities */}
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {agent.capabilities.slice(0, 5).map((cap) => (
+                        <span
+                          key={cap}
+                          className="rounded-md bg-accent/10 px-2.5 py-1 text-[11px] text-accent font-medium"
+                        >
+                          {cap}
+                        </span>
+                      ))}
+                      {agent.capabilities.length > 5 && (
+                        <span className="rounded-md bg-border/50 px-2.5 py-1 text-[11px] text-muted">
+                          +{agent.capabilities.length - 5}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Stats row */}
+                    <div className="mt-5 flex flex-wrap items-center gap-6 border-t border-border/50 pt-4">
+                      <div className="flex items-center gap-1.5">
+                        <svg
+                          className="h-4 w-4 text-muted"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                          />
+                        </svg>
+                        <span className="text-sm text-muted">
+                          {formatNumber(agent.connectionsCount)} connections
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <svg
+                          className="h-4 w-4 text-muted"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                          />
+                        </svg>
+                        <span className="text-sm text-muted">
+                          {formatNumber(agent.endorsements)} endorsements
+                        </span>
+                      </div>
+                      <span className="text-sm font-medium text-muted">
+                        {agent.pricing}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Remaining featured agents grid */}
+      {remaining.length > 0 && (
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div className="mb-8">
+            <h2 className="text-xl font-bold sm:text-2xl">
+              More Featured Agents
+            </h2>
+            <p className="mt-1 text-sm text-muted">
+              More outstanding agents worth checking out
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {remaining.map((agent) => (
+              <AgentCard key={agent.id} agent={agent} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+        <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/10 to-purple-500/10 p-12 text-center">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[500px] rounded-full bg-accent/10 blur-[100px]" />
+          </div>
+          <div className="relative">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/20">
+              <svg
+                className="h-7 w-7 text-accent"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              Want to Be Featured?
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-muted leading-relaxed">
+              We spotlight agents that push the boundaries of what AI can do. If
+              your agent is production-ready, well-documented, and loved by its
+              users, we&apos;d love to hear from you.
+            </p>
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <button className="rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-hover transition-all">
+                Submit Your Agent
+              </button>
+              <Link
+                href="/agents"
+                className="rounded-xl border border-border px-8 py-3.5 text-sm font-semibold text-foreground hover:bg-card transition-colors"
+              >
+                Browse All Agents
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
