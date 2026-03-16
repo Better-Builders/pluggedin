@@ -29,10 +29,10 @@ function parsePills(value: string): string[] {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none transition-colors";
+  "w-full border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none transition-colors";
 
 const selectClass =
-  "w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none transition-colors appearance-none";
+  "w-full border border-border bg-card px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none transition-colors appearance-none";
 
 function PillList({ items }: { items: string[] }) {
   if (items.length === 0) return <span className="text-muted text-xs">None</span>;
@@ -41,7 +41,7 @@ function PillList({ items }: { items: string[] }) {
       {items.map((item) => (
         <span
           key={item}
-          className="rounded-full bg-accent/15 px-3 py-1 text-xs font-medium text-accent"
+          className="bg-accent/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent"
         >
           {item}
         </span>
@@ -100,9 +100,9 @@ export default function ListAgentPage() {
     return (
       <main className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-lg">
-          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-success/20">
+          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center bg-cyan/20">
             <svg
-              className="h-10 w-10 text-success"
+              className="h-10 w-10 text-cyan"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -115,7 +115,7 @@ export default function ListAgentPage() {
               />
             </svg>
           </div>
-          <h1 className="text-3xl font-bold sm:text-4xl">
+          <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">
             Your agent has been listed on{" "}
             <span className="text-accent">PluggedIn</span>!
           </h1>
@@ -132,7 +132,7 @@ export default function ListAgentPage() {
           </div>
           <Link
             href="/"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-hover transition-all"
+            className="mt-8 inline-flex items-center gap-2 bg-accent px-8 py-3.5 text-sm font-semibold text-white hover:bg-accent-hover transition-all"
           >
             Back to Home
           </Link>
@@ -147,15 +147,15 @@ export default function ListAgentPage() {
         {/* Header */}
         <div className="mb-10 text-center">
           <Link href="/" className="mb-6 inline-flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-white font-bold text-xs">
+            <div className="flex h-8 w-8 items-center justify-center bg-accent text-white font-bold text-xs">
               PI
             </div>
             <span className="text-lg font-bold">
               Plugged<span className="text-accent">In</span>
             </span>
           </Link>
-          <h1 className="text-3xl font-bold sm:text-4xl">List Your Agent</h1>
-          <p className="mt-2 text-sm text-muted">
+          <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">List Your Agent</h1>
+          <p className="mt-2 text-xs uppercase tracking-widest font-semibold text-muted">
             Get discovered by developers, teams, and enterprises
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function ListAgentPage() {
               <div key={label} className="flex flex-1 items-center">
                 <div className="flex flex-col items-center">
                   <div
-                    className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                    className={`flex h-9 w-9 items-center justify-center text-sm font-semibold transition-colors ${
                       i < step
                         ? "bg-accent text-white"
                         : i === step
@@ -214,12 +214,12 @@ export default function ListAgentPage() {
         </div>
 
         {/* Step content */}
-        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+        <div className="border border-border bg-card p-6 sm:p-8">
           {/* Step 1: Basic Info */}
           {step === 0 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Basic Info</h2>
-              <p className="text-sm text-muted">
+              <h2 className="text-xl font-black uppercase tracking-tight">Basic Info</h2>
+              <p className="text-xs uppercase tracking-widest font-semibold text-muted">
                 Tell us about your agent &mdash; this is what people see first.
               </p>
 
@@ -331,8 +331,8 @@ export default function ListAgentPage() {
           {/* Step 2: Details */}
           {step === 1 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Details</h2>
-              <p className="text-sm text-muted">
+              <h2 className="text-xl font-black uppercase tracking-tight">Details</h2>
+              <p className="text-xs uppercase tracking-widest font-semibold text-muted">
                 Help people understand what your agent does and how it works.
               </p>
 
@@ -439,8 +439,8 @@ export default function ListAgentPage() {
           {/* Step 3: Profile */}
           {step === 2 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Profile</h2>
-              <p className="text-sm text-muted">
+              <h2 className="text-xl font-black uppercase tracking-tight">Profile</h2>
+              <p className="text-xs uppercase tracking-widest font-semibold text-muted">
                 Set your agent&apos;s avatar and what it&apos;s open to.
               </p>
 
@@ -452,7 +452,7 @@ export default function ListAgentPage() {
                   {openToOptions.map((item) => (
                     <label
                       key={item}
-                      className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 transition-colors ${
+                      className={`flex cursor-pointer items-center gap-3 border px-4 py-3 transition-colors ${
                         openTo.includes(item)
                           ? "border-accent bg-accent/10"
                           : "border-border bg-card hover:border-accent/40 hover:bg-card-hover"
@@ -465,7 +465,7 @@ export default function ListAgentPage() {
                         className="sr-only"
                       />
                       <div
-                        className={`flex h-5 w-5 items-center justify-center rounded border transition-colors ${
+                        className={`flex h-5 w-5 items-center justify-center border transition-colors ${
                           openTo.includes(item)
                             ? "border-accent bg-accent"
                             : "border-border"
@@ -513,7 +513,7 @@ export default function ListAgentPage() {
                     className={inputClass + " max-w-[100px] text-center text-lg font-bold"}
                   />
                   {avatar.length === 2 && (
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-purple-500 text-lg font-bold text-white shadow-lg shadow-accent/20">
+                    <div className="flex h-14 w-14 items-center justify-center bg-gradient-to-br from-accent to-cyan text-lg font-bold text-white">
                       {avatar}
                     </div>
                   )}
@@ -525,16 +525,16 @@ export default function ListAgentPage() {
           {/* Step 4: Review & Submit */}
           {step === 3 && (
             <div className="space-y-6">
-              <h2 className="text-xl font-bold">Review & Submit</h2>
-              <p className="text-sm text-muted">
+              <h2 className="text-xl font-black uppercase tracking-tight">Review & Submit</h2>
+              <p className="text-xs uppercase tracking-widest font-semibold text-muted">
                 Here&apos;s how your agent will appear on PluggedIn.
               </p>
 
               {/* Preview card */}
-              <div className="rounded-2xl border border-border bg-background p-6">
+              <div className="border border-border bg-background p-6">
                 {/* Top section */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-purple-500 text-xl font-bold text-white shadow-lg shadow-accent/20">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center bg-gradient-to-br from-accent to-cyan text-xl font-bold text-white">
                     {avatar || "??"}
                   </div>
                   <div className="min-w-0">
@@ -547,25 +547,25 @@ export default function ListAgentPage() {
                     <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted">
                       {creator && <span>{creator}</span>}
                       {creator && location && (
-                        <span className="h-1 w-1 rounded-full bg-border" />
+                        <span className="h-1 w-1 bg-border" />
                       )}
                       {location && <span>{location}</span>}
                       {(creator || location) && (
-                        <span className="h-1 w-1 rounded-full bg-border" />
+                        <span className="h-1 w-1 bg-border" />
                       )}
                       <span
-                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ${
+                        className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                           status === "active"
-                            ? "bg-success/15 text-success"
+                            ? "bg-cyan/15 text-cyan"
                             : status === "beta"
                             ? "bg-amber-500/15 text-amber-400"
                             : "bg-blue-500/15 text-blue-400"
                         }`}
                       >
                         <span
-                          className={`h-1.5 w-1.5 rounded-full ${
+                          className={`h-1.5 w-1.5 ${
                             status === "active"
-                              ? "bg-success"
+                              ? "bg-cyan"
                               : status === "beta"
                               ? "bg-amber-400"
                               : "bg-blue-400"
@@ -587,12 +587,12 @@ export default function ListAgentPage() {
                 {/* Category & Pricing */}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {category && (
-                    <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-medium text-accent">
+                    <span className="bg-accent/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent">
                       {category}
                     </span>
                   )}
                   {pricing && (
-                    <span className="rounded-full bg-border/50 px-3 py-1 text-xs text-foreground">
+                    <span className="bg-border/50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-foreground">
                       {pricing}
                     </span>
                   )}
@@ -650,7 +650,7 @@ export default function ListAgentPage() {
                       {openTo.map((item) => (
                         <span
                           key={item}
-                          className="rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs text-accent"
+                          className="border border-accent/30 bg-accent/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent"
                         >
                           {item}
                         </span>
@@ -676,7 +676,7 @@ export default function ListAgentPage() {
           <button
             onClick={() => setStep((s) => s - 1)}
             disabled={step === 0}
-            className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium transition-colors ${
+            className={`flex items-center gap-2 px-6 py-3 text-sm font-medium transition-colors ${
               step === 0
                 ? "cursor-not-allowed text-muted/40"
                 : "border border-border bg-card text-foreground hover:bg-card-hover"
@@ -702,10 +702,10 @@ export default function ListAgentPage() {
             <button
               onClick={() => setStep((s) => s + 1)}
               disabled={!canNext()}
-              className={`flex items-center gap-2 rounded-xl px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all ${
+              className={`flex items-center gap-2 px-8 py-3 text-sm font-semibold text-white transition-all ${
                 canNext()
-                  ? "bg-accent shadow-accent/25 hover:bg-accent-hover"
-                  : "cursor-not-allowed bg-accent/40 shadow-none"
+                  ? "bg-accent hover:bg-accent-hover"
+                  : "cursor-not-allowed bg-accent/40"
               }`}
             >
               Next
@@ -726,7 +726,7 @@ export default function ListAgentPage() {
           ) : (
             <button
               onClick={handleSubmit}
-              className="flex items-center gap-2 rounded-xl bg-success px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-success/25 hover:bg-success/90 transition-all"
+              className="flex items-center gap-2 bg-cyan text-background px-8 py-3 text-sm font-bold uppercase tracking-wider hover:bg-cyan/90 transition-all"
             >
               Submit Agent
               <svg

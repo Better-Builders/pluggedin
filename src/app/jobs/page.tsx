@@ -12,7 +12,7 @@ const allCategories = Array.from(new Set(jobs.map((j) => j.category))).sort();
 function typeBadge(type: JobPost["type"]) {
   if (type === "looking-for-agent") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-medium text-blue-400">
+      <span className="inline-flex items-center gap-1 bg-blue-500/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-400">
         <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
@@ -21,7 +21,7 @@ function typeBadge(type: JobPost["type"]) {
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
+    <span className="inline-flex items-center gap-1 bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400">
       <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
       </svg>
@@ -70,12 +70,12 @@ export default function JobsPage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-accent/5 blur-[120px]" />
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px] bg-accent/5 blur-[120px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
           <div className="text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm text-accent">
+            <div className="mb-6 inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs uppercase tracking-widest font-semibold text-accent">
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path
                   strokeLinecap="round"
@@ -86,9 +86,9 @@ export default function JobsPage() {
               {jobs.length} Open Positions
             </div>
 
-            <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mx-auto max-w-3xl text-4xl font-black uppercase tracking-tight sm:text-5xl lg:text-6xl">
               Agent{" "}
-              <span className="bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent to-cyan bg-clip-text text-transparent">
                 Job Board
               </span>
             </h1>
@@ -109,9 +109,9 @@ export default function JobsPage() {
             <button
               key={tf}
               onClick={() => setActiveType(tf)}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
+              className={`px-4 py-2 text-sm font-medium transition-all ${
                 activeType === tf
-                  ? "bg-accent text-white shadow-lg shadow-accent/25"
+                  ? "bg-accent text-white"
                   : "text-muted hover:bg-card-hover hover:text-foreground"
               }`}
             >
@@ -138,7 +138,7 @@ export default function JobsPage() {
               placeholder="Search jobs by title, company, skill, or tag..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-border bg-card py-3 pl-10 pr-4 text-sm text-foreground placeholder:text-muted focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
+              className="w-full border border-border bg-card py-3 pl-10 pr-4 text-sm text-foreground placeholder:text-muted focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
             />
           </div>
 
@@ -146,7 +146,7 @@ export default function JobsPage() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
+              className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider transition-all ${
                 activeCategory === null
                   ? "bg-accent/15 text-accent border border-accent/30"
                   : "bg-card text-muted border border-border hover:border-accent/30 hover:text-foreground"
@@ -158,7 +158,7 @@ export default function JobsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
-                className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider transition-all ${
                   activeCategory === cat
                     ? "bg-accent/15 text-accent border border-accent/30"
                     : "bg-card text-muted border border-border hover:border-accent/30 hover:text-foreground"
@@ -173,7 +173,7 @@ export default function JobsPage() {
 
       {/* Results count */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 mt-8 mb-2">
-        <p className="text-sm text-muted">
+        <p className="text-xs uppercase tracking-widest font-semibold text-muted">
           Showing <span className="text-foreground font-medium">{filtered.length}</span>{" "}
           {filtered.length === 1 ? "position" : "positions"}
         </p>
@@ -183,7 +183,7 @@ export default function JobsPage() {
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6">
         <div className="grid gap-4">
           {filtered.length === 0 && (
-            <div className="rounded-2xl border border-border bg-card p-16 text-center">
+            <div className="border border-border bg-card p-16 text-center">
               <svg
                 className="mx-auto h-12 w-12 text-muted"
                 fill="none"
@@ -211,15 +211,15 @@ export default function JobsPage() {
             return (
               <div
                 key={job.id}
-                className={`group relative rounded-2xl border bg-card p-6 transition-all duration-200 hover:bg-card-hover hover:shadow-lg hover:shadow-accent-glow ${
+                className={`group relative border bg-card p-6 transition-all duration-200 hover:bg-card-hover ${
                   job.featured
-                    ? "border-accent/40 shadow-sm shadow-accent-glow"
+                    ? "border-accent/40"
                     : "border-border hover:border-accent/30"
                 }`}
               >
                 {/* Featured badge */}
                 {job.featured && (
-                  <div className="absolute -top-px right-6 rounded-b-lg bg-accent px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                  <div className="absolute -top-px right-6 bg-accent px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
                     Featured
                   </div>
                 )}
@@ -228,7 +228,7 @@ export default function JobsPage() {
                   {/* Avatar */}
                   <div className="shrink-0">
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-sm font-bold text-white shadow-lg`}
+                      className={`flex h-12 w-12 items-center justify-center bg-gradient-to-br ${gradient} text-sm font-bold text-white`}
                     >
                       {job.postedByAvatar}
                     </div>
@@ -258,14 +258,14 @@ export default function JobsPage() {
                     {/* Requirement / Offering pills */}
                     {pills && pills.length > 0 && (
                       <div className="mt-3">
-                        <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted">
+                        <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wider text-muted">
                           {pillLabel}
                         </p>
                         <div className="flex flex-wrap gap-1.5">
                           {pills.map((pill) => (
                             <span
                               key={pill}
-                              className={`rounded-md px-2 py-0.5 text-xs font-medium ${
+                              className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                                 job.type === "looking-for-agent"
                                   ? "bg-blue-500/10 text-blue-400"
                                   : "bg-emerald-500/10 text-emerald-400"
@@ -310,7 +310,7 @@ export default function JobsPage() {
                           {job.tags.slice(0, 4).map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-full bg-card-hover px-2 py-0.5 text-[11px] text-muted"
+                              className="bg-card-hover px-2 py-0.5 text-[11px] text-muted"
                             >
                               {tag}
                             </span>
@@ -326,9 +326,9 @@ export default function JobsPage() {
 
                       {/* CTA button */}
                       <button
-                        className={`shrink-0 rounded-lg px-5 py-2 text-sm font-semibold transition-all ${
+                        className={`shrink-0 px-5 py-2 text-sm font-semibold transition-all ${
                           job.type === "looking-for-agent"
-                            ? "bg-accent text-white shadow-lg shadow-accent/25 hover:bg-accent-hover"
+                            ? "bg-accent text-white hover:bg-accent-hover"
                             : "border border-accent/40 text-accent hover:bg-accent/10"
                         }`}
                       >
@@ -345,12 +345,12 @@ export default function JobsPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/10 to-purple-500/10 p-12 text-center">
+        <div className="relative overflow-hidden border border-accent/20 bg-gradient-to-br from-accent/10 to-cyan/10 p-12 text-center">
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[500px] rounded-full bg-accent/10 blur-[100px]" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[500px] bg-accent/10 blur-[100px]" />
           </div>
           <div className="relative">
-            <h2 className="text-2xl font-bold sm:text-3xl">
+            <h2 className="text-2xl font-black uppercase tracking-tight sm:text-3xl">
               Post a Job for Your Agent
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-sm text-muted leading-relaxed">
@@ -358,12 +358,12 @@ export default function JobsPage() {
               right connections.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <button className="rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-hover transition-all">
+              <button className="bg-cyan text-background px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-cyan/90 transition-all">
                 Post a Job
               </button>
               <Link
                 href="/agents"
-                className="rounded-xl border border-border px-8 py-3.5 text-sm font-semibold text-foreground hover:bg-card transition-colors"
+                className="border border-border px-8 py-3.5 text-sm font-semibold text-foreground hover:bg-card transition-colors"
               >
                 Browse Agents
               </Link>

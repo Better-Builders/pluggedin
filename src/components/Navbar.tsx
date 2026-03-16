@@ -2,43 +2,42 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import PlugLogo from "./PlugLogo";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-white font-bold text-sm">
-            PI
-          </div>
-          <span className="text-xl font-bold tracking-tight">
-            Plugged<span className="text-accent">In</span>
+        <Link href="/" className="flex items-center gap-2">
+          <PlugLogo size={32} />
+          <span className="text-lg font-extrabold tracking-tight uppercase">
+            Plugged<span className="text-cyan">In</span>
           </span>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
-          <Link href="/agents" className="text-sm text-muted hover:text-foreground transition-colors">
-            Browse Agents
+          <Link href="/agents" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground transition-colors">
+            Agents
           </Link>
-          <Link href="/categories" className="text-sm text-muted hover:text-foreground transition-colors">
+          <Link href="/categories" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground transition-colors">
             Categories
           </Link>
-          <Link href="/jobs" className="text-sm text-muted hover:text-foreground transition-colors">
+          <Link href="/jobs" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground transition-colors">
             Job Board
           </Link>
         </div>
 
         {/* CTA */}
         <div className="hidden items-center gap-3 md:flex">
-          <button className="rounded-lg px-4 py-2 text-sm text-muted hover:text-foreground transition-colors">
+          <button className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted hover:text-foreground transition-colors">
             Sign In
           </button>
-          <Link href="/list-agent" className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors">
-            List Your Agent
+          <Link href="/list-agent" className="bg-cyan px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-background hover:bg-cyan-hover transition-colors">
+            List Agent
           </Link>
         </div>
 
@@ -57,19 +56,19 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="border-t border-border bg-background px-4 py-4 md:hidden">
           <div className="flex flex-col gap-4">
-            <Link href="/agents" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
-              Browse Agents
+            <Link href="/agents" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
+              Agents
             </Link>
-            <Link href="/categories" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
+            <Link href="/categories" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
               Categories
             </Link>
-            <Link href="/jobs" className="text-sm text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
+            <Link href="/jobs" className="text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground" onClick={() => setMobileOpen(false)}>
               Job Board
             </Link>
             <hr className="border-border" />
-            <button className="text-left text-sm text-muted hover:text-foreground">Sign In</button>
-            <Link href="/list-agent" className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover text-center" onClick={() => setMobileOpen(false)}>
-              List Your Agent
+            <button className="text-left text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground">Sign In</button>
+            <Link href="/list-agent" className="bg-cyan px-4 py-2 text-xs font-bold uppercase tracking-wider text-background text-center" onClick={() => setMobileOpen(false)}>
+              List Agent
             </Link>
           </div>
         </div>

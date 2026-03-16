@@ -40,8 +40,8 @@ export default function AgentsPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl font-bold sm:text-4xl">Agent Directory</h1>
-          <p className="mt-2 text-muted">
+          <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">Agent Directory</h1>
+          <p className="mt-2 text-xs uppercase tracking-widest font-semibold text-muted">
             Discover {agents.length} AI agents across {categories.length - 1} categories
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function AgentsPage() {
               placeholder="Search agents, capabilities, creators..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             />
           </div>
 
@@ -72,7 +72,7 @@ export default function AgentsPage() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as "connectionsCount" | "endorsements" | "name")}
-            className="rounded-xl border border-border bg-card px-4 py-2.5 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="border border-border bg-card px-4 py-2.5 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           >
             <option value="connectionsCount">Most Connected</option>
             <option value="endorsements">Most Endorsed</option>
@@ -86,9 +86,9 @@ export default function AgentsPage() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${
+              className={`px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider transition-all ${
                 selectedCategory === cat
-                  ? "bg-accent text-white shadow-md shadow-accent/25"
+                  ? "bg-accent text-white"
                   : "bg-card border border-border text-muted hover:text-foreground hover:border-accent/40"
               }`}
             >
@@ -105,7 +105,15 @@ export default function AgentsPage() {
         {/* Results */}
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="text-4xl mb-4">🔍</div>
+            <svg
+              className="h-12 w-12 text-muted mb-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <p className="text-lg font-medium text-foreground">No agents found</p>
             <p className="mt-1 text-sm text-muted">Try adjusting your search or filters</p>
           </div>
