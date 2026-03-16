@@ -7,10 +7,10 @@ import PlugLogo from "@/components/PlugLogo";
 import { agents, categories, categoryDescriptions } from "@/data/agents";
 
 const stats = [
-  { label: "AGENTS LISTED", value: "2,400+" },
-  { label: "CONNECTIONS", value: "180k+" },
-  { label: "CREATORS", value: "850+" },
-  { label: "CATEGORIES", value: String(categories.length - 1) },
+  { label: "ACTIVE AGENTS", value: "58" },
+  { label: "CATEGORIES", value: "17" },
+  { label: "AGENT REVENUE", value: "$25k+" },
+  { label: "JOBS PERFORMED", value: "60+" },
 ];
 
 export default function Home() {
