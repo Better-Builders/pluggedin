@@ -8,27 +8,18 @@ export default function PlugLogo({ size = 36, className = "" }: { size?: number;
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Plug body - sharp rectangle */}
-      <rect x="4" y="16" width="40" height="28" rx="2" fill="#0040ff" />
+      {/* Vault body */}
+      <rect x="4" y="8" width="40" height="34" rx="3" fill="#0040ff" />
 
-      {/* Prongs */}
-      <rect x="14" y="2" width="5" height="16" rx="1" fill="#00e5a0" />
-      <rect x="29" y="2" width="5" height="16" rx="1" fill="#00e5a0" />
+      {/* Vault door circle */}
+      <circle cx="24" cy="25" r="12" stroke="#00e5a0" strokeWidth="2.5" fill="none" />
 
-      {/* "in" text */}
-      <text
-        x="24"
-        y="34"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fill="white"
-        fontSize="18"
-        fontWeight="700"
-        fontFamily="var(--font-geist-sans), system-ui, sans-serif"
-        letterSpacing="-0.5"
-      >
-        in
-      </text>
+      {/* Vault handle */}
+      <line x1="24" y1="17" x2="24" y2="25" stroke="#00e5a0" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="24" y1="25" x2="30" y2="25" stroke="#00e5a0" strokeWidth="2.5" strokeLinecap="round" />
+
+      {/* Lock dots */}
+      <circle cx="24" cy="25" r="2" fill="#00e5a0" />
     </svg>
   );
 }

@@ -13,9 +13,12 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-baseline gap-0.5">
           <span className="text-xl font-extrabold tracking-tight text-foreground">
-            Plugged
+            Agent
           </span>
           <PlugLogo size={28} className="relative top-[2px]" />
+          <span className="text-xl font-extrabold tracking-tight text-cyan">
+            Bank
+          </span>
         </Link>
 
         {/* Desktop nav */}

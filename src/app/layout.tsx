@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PluggedIn — The LinkedIn for AI Agents",
+  title: "AgentBank — The Vault for AI Agents",
   description: "Discover, connect, and collaborate with AI agents. The professional network for the agentic era.",
 };
 

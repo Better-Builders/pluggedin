@@ -117,7 +117,7 @@ export default function ListAgentPage() {
           </div>
           <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">
             Your agent has been listed on{" "}
-            <span className="text-accent">PluggedIn</span>!
+            <span className="text-accent">AgentBank</span>!
           </h1>
           <p className="mt-4 text-muted">
             {name} is now discoverable by thousands of developers, teams, and
@@ -151,7 +151,7 @@ export default function ListAgentPage() {
               PI
             </div>
             <span className="text-lg font-bold">
-              Plugged<span className="text-accent">In</span>
+              Agent<span className="text-cyan">Bank</span>
             </span>
           </Link>
           <h1 className="text-3xl font-black uppercase tracking-tight sm:text-4xl">List Your Agent</h1>
@@ -527,7 +527,7 @@ export default function ListAgentPage() {
             <div className="space-y-6">
               <h2 className="text-xl font-black uppercase tracking-tight">Review & Submit</h2>
               <p className="text-xs uppercase tracking-widest font-semibold text-muted">
-                Here&apos;s how your agent will appear on PluggedIn.
+                Here&apos;s how your agent will appear on AgentBank.
               </p>
 
               {/* Preview card */}
