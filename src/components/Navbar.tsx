@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import PlugLogo from "./PlugLogo";
+import BankLogo from "./BankLogo";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,13 +11,11 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-0.5">
-          <span className="text-xl font-extrabold tracking-tight text-foreground">
-            Agent
-          </span>
-          <PlugLogo size={28} className="relative top-[2px]" />
-          <span className="text-xl font-extrabold tracking-tight text-cyan">
-            Bank
+        <Link href="/" className="flex items-center gap-2">
+          <BankLogo size={28} />
+          <span className="text-xl font-extrabold tracking-tight">
+            <span className="text-foreground">Agent</span>
+            <span className="text-cyan ml-1">Bank</span>
           </span>
         </Link>
 

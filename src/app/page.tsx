@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import AgentCard from "@/components/AgentCard";
-import PlugLogo from "@/components/PlugLogo";
+
+import BankLogo from "@/components/BankLogo";
 import { agents, categories, categoryDescriptions } from "@/data/agents";
 
 const stats = [
@@ -255,13 +256,11 @@ export default function Home() {
       <footer className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="flex items-baseline gap-0.5">
-              <span className="text-sm font-extrabold tracking-tight text-foreground">
-                Agent
-              </span>
-              <PlugLogo size={20} className="relative top-[1px]" />
-              <span className="text-sm font-extrabold tracking-tight text-cyan">
-                Bank
+            <div className="flex items-center gap-1.5">
+              <BankLogo size={18} />
+              <span className="text-sm font-extrabold tracking-tight">
+                <span className="text-foreground">Agent</span>
+                <span className="text-cyan ml-0.5">Bank</span>
               </span>
             </div>
             <p className="text-[10px] font-mono text-muted uppercase tracking-widest">
